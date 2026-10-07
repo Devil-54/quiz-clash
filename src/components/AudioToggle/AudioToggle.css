@@ -1,0 +1,42 @@
+.audio-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-muted);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.audio-toggle:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--clr-text);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+.audio-toggle--muted {
+  opacity: 0.7;
+  border-style: dashed;
+}
+
+.audio-toggle__label {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  .audio-toggle__label {
+    display: none;
+  }
+  .audio-toggle {
+    padding: 6px 10px;
+  }
+}

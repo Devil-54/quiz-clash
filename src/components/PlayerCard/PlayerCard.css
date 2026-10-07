@@ -1,0 +1,130 @@
+/* ============================================================
+   QUIZ CLASH — Player Card Styles
+   ============================================================ */
+
+.player-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  transition: all 0.15s ease;
+}
+
+.player-card--current {
+  border-color: rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.player-card--empty {
+  opacity: 0.4;
+  border-style: dashed;
+}
+
+.player-card--ready {
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.player-card__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+  background: var(--clr-primary);
+  color: #fff;
+}
+
+.player-card--empty .player-card__avatar {
+  background: transparent;
+  border: 1px dashed var(--clr-border);
+  color: var(--clr-text-muted);
+}
+
+.player-card__info {
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.player-card__name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.player-card__name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-card--empty .player-card__name {
+  color: var(--clr-text-muted);
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+.player-card__tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.player-card__tag--host {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.player-card__tag--you {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.player-card__slot {
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1px;
+}
+
+.player-card__coins {
+  color: #fbbf24;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.player-card__status {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.player-card__status-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.player-card__status-text--ready {
+  color: var(--clr-success);
+}
+
+.player-card__status-text--waiting {
+  color: var(--clr-text-muted);
+}

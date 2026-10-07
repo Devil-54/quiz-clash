@@ -1,0 +1,332 @@
+/* ============================================================
+   Results Screen - Quiz Clash Design System
+   ============================================================ */
+
+.results {
+  background: radial-gradient(circle at 50% 15%, rgba(99, 102, 241, 0.12) 0%, rgba(10, 13, 20, 0.98) 70%),
+              radial-gradient(ellipse at 80% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 60%),
+              var(--clr-bg);
+  position: relative;
+  overflow-x: hidden;
+  padding: 40px 16px 60px;
+  min-height: 100vh;
+}
+
+.results::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.results__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  animation: fadeInResults 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInResults {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ── */
+.results__header {
+  text-align: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.results__header-top {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+
+.results__game-over {
+  font-family: var(--font-display, var(--font-sans));
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #fff;
+  margin-bottom: 6px;
+  text-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
+}
+
+.results__subtitle {
+  font-size: 0.92rem;
+  color: var(--clr-text-muted);
+  font-weight: 500;
+}
+
+/* ── Winner / Solo Hero Spotlight Card ── */
+.results__winner-card {
+  background: linear-gradient(145deg, rgba(99, 102, 241, 0.12), rgba(168, 85, 247, 0.08)), var(--clr-surface);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35), 0 0 30px rgba(99, 102, 241, 0.1);
+  animation: popWinner 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.results__winner-card--tie {
+  background: linear-gradient(145deg, rgba(245, 158, 11, 0.12), rgba(99, 102, 241, 0.08)), var(--clr-surface);
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35), 0 0 30px rgba(245, 158, 11, 0.1);
+}
+
+@keyframes popWinner {
+  0% { transform: scale(0.92); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.results__winner-trophy {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+}
+
+.results__winner-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--clr-accent);
+  margin-bottom: 6px;
+}
+
+.results__winner-name {
+  font-family: var(--font-display, var(--font-sans));
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.results__score-highlight {
+  color: var(--clr-accent);
+}
+
+.results__winner-score {
+  font-size: 0.95rem;
+  color: var(--clr-text-muted);
+}
+
+.results__winner-score strong {
+  color: var(--clr-accent);
+  font-size: 1.15rem;
+  font-family: var(--font-mono);
+}
+
+.results__feedback-text {
+  color: var(--clr-text-muted);
+  font-size: 0.92rem;
+  margin-top: 4px;
+}
+
+/* ── Rewards Breakdown Card ── */
+.results__rewards-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.results__rewards-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.results__rewards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.results__rewards-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.results__stat-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--clr-text-muted);
+}
+
+.results__rewards-row--total {
+  border-top: 1px solid rgba(99, 102, 241, 0.3);
+  border-bottom: none;
+  font-weight: 800;
+  font-size: 1rem;
+  color: #fff;
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.results__coins-earned {
+  color: var(--clr-accent);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.results__rewards-row--balance {
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+  padding-top: 8px;
+}
+
+.results__total-coins {
+  color: var(--clr-accent);
+  font-weight: 800;
+}
+
+/* ── Leaderboard Standings ── */
+.results__leaderboard-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--clr-text-muted);
+  margin-bottom: 10px;
+}
+
+.results__leaderboard {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.results__leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.15s;
+}
+
+.results__leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+.results__leaderboard-item--self {
+  background: rgba(99, 102, 241, 0.12);
+  border-left: 3px solid var(--clr-primary);
+}
+
+.results__lb-rank {
+  font-size: 1.1rem;
+  font-weight: 800;
+  min-width: 28px;
+  text-align: center;
+}
+
+.results__lb-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.results__lb-info {
+  flex: 1;
+}
+
+.results__lb-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.results__lb-self-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+
+.results__lb-stats {
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+  margin-top: 2px;
+}
+
+.results__lb-score-col {
+  text-align: right;
+}
+
+.results__lb-score {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.results__lb-rematch-status {
+  font-size: 0.75rem;
+  color: var(--clr-success);
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ── Actions ── */
+.results__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.results__actions--solo {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.btn--ready {
+  background: var(--clr-success) !important;
+  color: #fff !important;
+  border-color: var(--clr-success) !important;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35) !important;
+}

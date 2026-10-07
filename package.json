@@ -1,0 +1,49 @@
+{
+  "name": "quiz-clash",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A real-time multiplayer and single-player quiz game featuring Math, General Knowledge, and English Grammar challenges with dynamic difficulty modes, room lobbies, live scoring, and coin rewards.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "server": "node server/server.js",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "test": "node test-all-eighteen-modes.js",
+    "test:security": "node test-security-config.js"
+  },
+  "keywords": [
+    "quiz",
+    "multiplayer",
+    "socketio",
+    "react",
+    "nodejs",
+    "express",
+    "educational-game",
+    "math-quiz",
+    "gk-quiz",
+    "grammar-quiz",
+    "realtime-game"
+  ],
+  "author": "Deepak Mishra",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "socket.io": "^4.8.4",
+    "socket.io-client": "^4.8.4"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "vite": "^8.3.0"
+  }
+}

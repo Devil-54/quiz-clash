@@ -1,0 +1,81 @@
+/* ============================================================
+   QUIZ CLASH — Question Card Styles
+   ============================================================ */
+
+.question {
+  text-align: center;
+  padding: 6px 0 16px;
+  animation: fadeIn 0.18s ease-out;
+  width: 100%;
+}
+
+.question__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.question__op-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.question__op-badge--gk {
+  color: #a78bfa;
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.question__op-badge--grammar {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.question__difficulty {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+.question__difficulty strong {
+  color: var(--clr-accent);
+}
+
+.question__difficulty--medium strong {
+  color: #f59e0b;
+}
+
+.question__difficulty--hard strong {
+  color: #ef4444;
+}
+
+.question__text {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 900;
+  font-family: var(--font-display);
+  color: #fff;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  padding: 10px 0 16px;
+}
+
+.question__text--gk {
+  font-size: clamp(1.15rem, 3.2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.4;
+  padding: 8px 12px 14px;
+}

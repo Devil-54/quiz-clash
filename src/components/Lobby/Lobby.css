@@ -1,0 +1,239 @@
+/* ============================================================
+   QUIZ CLASH — Lobby Screen Styles
+   ============================================================ */
+
+.lobby {
+  background: radial-gradient(circle at 50% 15%, #161c2c 0%, #0a0d14 75%);
+  min-height: 100vh;
+  padding: 24px 16px;
+}
+
+.lobby__card {
+  animation: fadeIn 0.2s ease-out;
+  padding: 24px 20px;
+}
+
+.lobby__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.lobby__back {
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text-secondary);
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease;
+}
+
+.lobby__back:hover {
+  background: var(--clr-surface-hover);
+  color: #fff;
+}
+
+.lobby__header-brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lobby__brand-icon {
+  font-size: 1.1rem;
+  color: var(--clr-primary);
+}
+
+.lobby__title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.lobby__title span {
+  color: var(--clr-primary);
+}
+
+.lobby__header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lobby__leave-btn {
+  font-size: 0.78rem;
+  padding: 6px 10px;
+}
+
+/* Room Code Banner */
+.lobby__room-banner {
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+
+.lobby__room-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.lobby__room-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.08em;
+}
+
+.lobby__room-sub {
+  font-size: 0.72rem;
+  color: var(--clr-text-muted);
+}
+
+.lobby__room-code-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lobby__room-code {
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-family: var(--font-mono);
+  letter-spacing: 0.22em;
+  color: #fff;
+}
+
+.lobby__copy-btn {
+  background: var(--clr-surface-3);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lobby__copy-btn:hover {
+  background: var(--clr-surface-hover);
+  border-color: var(--clr-text-muted);
+  color: #fff;
+}
+
+/* Game Info Chips */
+.lobby__info-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.lobby__info-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.lobby__info-chip.badge--math {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+}
+
+.lobby__info-chip.badge--gk {
+  background: rgba(139, 92, 246, 0.12);
+  border-color: rgba(139, 92, 246, 0.3);
+  color: #a78bfa;
+}
+
+.lobby__info-chip.badge--grammar {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+/* Roster Section */
+.lobby__roster-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.lobby__section-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--clr-text-muted);
+}
+
+.lobby__player-count {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+}
+
+.lobby__player-count strong {
+  color: #fff;
+}
+
+.lobby__players {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+/* Actions */
+.lobby__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lobby__start-note {
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+  text-align: center;
+}
+
+.lobby__waiting-banner {
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px dashed rgba(99, 102, 241, 0.3);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  color: #a5b4fc;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.lobby__error {
+  background: var(--clr-danger-bg);
+  border: 1px solid var(--clr-danger);
+  color: #fca5a5;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}

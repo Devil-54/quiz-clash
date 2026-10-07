@@ -1,0 +1,370 @@
+/* ============================================================
+   QUIZ CLASH — Game Screen Styles
+   ============================================================ */
+
+.game {
+  background: radial-gradient(circle at 50% 10%, #151c2c 0%, #0a0d14 75%);
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top bar ── */
+.game__topbar {
+  width: 100%;
+  max-width: 1060px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--clr-border);
+  margin: 0 auto;
+}
+
+.game__brand-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.game__brand-icon {
+  font-size: 1.2rem;
+  color: var(--clr-primary);
+}
+
+.game__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #fff;
+}
+
+.game__title .accent {
+  color: var(--clr-primary);
+}
+
+.game__mode-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.game__mode-badge--math {
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #60a5fa;
+}
+
+.game__mode-badge--gk {
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  color: #a78bfa;
+}
+
+.game__mode-badge--grammar {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+.game__topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.game__coin-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+}
+
+.game__leave-btn {
+  font-size: 0.78rem;
+  padding: 5px 10px;
+}
+
+/* ── HUD Bar (Round & Timer) ── */
+.game__hud {
+  width: 100%;
+  border-bottom: 1px solid var(--clr-border);
+  background: rgba(15, 19, 28, 0.5);
+  padding: 8px 20px;
+}
+
+.game__hud-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.game__round-info {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.game__round-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.06em;
+}
+
+.game__round-count {
+  font-size: 0.88rem;
+  color: var(--clr-text-secondary);
+}
+
+.game__round-count strong {
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* Linear Timer Bar */
+.game__timer-wrapper {
+  flex: 1;
+  max-width: 540px;
+}
+
+.game__timer-bar-track {
+  width: 100%;
+  height: 6px;
+  background: var(--clr-surface-2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  border: 1px solid var(--clr-border);
+}
+
+.game__timer-bar-fill {
+  height: 100%;
+  background: var(--clr-primary);
+  border-radius: var(--radius-full);
+  transition: width 1s linear, background-color 0.2s ease;
+}
+
+.game__timer-bar-fill--danger {
+  background: var(--clr-danger);
+}
+
+.game__digital-timer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--clr-text-secondary);
+  white-space: nowrap;
+}
+
+.game__digital-timer--danger {
+  color: var(--clr-danger);
+}
+
+/* ── Main Layout ── */
+.game__layout {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 24px 20px 36px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 20px;
+  align-items: start;
+}
+
+.game__main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game__question-box {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+}
+
+.game__answers-box {
+  width: 100%;
+}
+
+/* Feedback banner */
+.game__feedback-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  align-self: center;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.game__feedback-pill--correct {
+  background: var(--clr-success-bg);
+  border: 1px solid var(--clr-success);
+  color: #34d399;
+}
+
+.game__feedback-pill--wrong {
+  background: var(--clr-danger-bg);
+  border: 1px solid var(--clr-danger);
+  color: #fca5a5;
+}
+
+/* Round outcome card */
+.game__round-result-card {
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  text-align: center;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.game__round-result-card--won {
+  background: var(--clr-success-bg);
+  border: 1px solid var(--clr-success);
+  color: #34d399;
+}
+
+.game__round-result-card--timeout {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
+.game__round-result-msg {
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.game__round-result-ans {
+  font-size: 0.8rem;
+  color: var(--clr-text-secondary);
+  margin-top: 2px;
+}
+
+.game__transition-hint {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+  text-align: center;
+}
+
+/* Sidebar Solo Card */
+.game__solo-card {
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.game__sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--clr-border);
+  padding-bottom: 10px;
+}
+
+.game__sidebar-title {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--clr-text-muted);
+}
+
+.game__sidebar-tag {
+  font-size: 0.72rem;
+  color: var(--clr-primary);
+  font-weight: 700;
+}
+
+.game__solo-player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.game__solo-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.game__solo-name-box {
+  text-align: left;
+}
+
+.game__solo-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.game__solo-mode {
+  font-size: 0.72rem;
+  color: var(--clr-text-muted);
+}
+
+.game__solo-score-box {
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.game__solo-score-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--clr-text-secondary);
+}
+
+.game__solo-score-row strong {
+  color: #fff;
+}
+
+.game__sidebar-tip {
+  font-size: 0.72rem;
+  color: var(--clr-text-muted);
+  text-align: center;
+  border-top: 1px solid var(--clr-border);
+  padding-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .game__layout {
+    grid-template-columns: 1fr;
+  }
+}

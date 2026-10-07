@@ -1,0 +1,302 @@
+/* ============================================================
+   QUIZ CLASH – Modern Gaming Design System
+   "Think Fast. Clash Smarter."
+   ============================================================ */
+
+:root {
+  /* ── Canvas & Surfaces ── */
+  --clr-bg: #0a0d14;
+  --clr-bg-subtle: #0f131c;
+  --clr-surface: #121724;
+  --clr-surface-2: #171d2c;
+  --clr-surface-3: #1f273b;
+  --clr-surface-hover: #263047;
+
+  /* ── Borders & Outlines ── */
+  --clr-border: #232a3b;
+  --clr-border-subtle: rgba(255, 255, 255, 0.08);
+  --clr-border-focus: #6366f1;
+
+  /* ── Accent & Brand Colors ── */
+  --clr-primary: #6366f1;
+  --clr-primary-hover: #4f46e5;
+  --clr-primary-active: #4338ca;
+  --clr-accent: #f59e0b;
+  --clr-accent-hover: #d97706;
+
+  /* ── Category Tones ── */
+  --clr-math: #3b82f6;
+  --clr-gk: #8b5cf6;
+  --clr-grammar: #10b981;
+
+  /* ── Feedback Tones ── */
+  --clr-success: #10b981;
+  --clr-success-bg: rgba(16, 185, 129, 0.12);
+  --clr-danger: #ef4444;
+  --clr-danger-bg: rgba(239, 68, 68, 0.12);
+  --clr-warning: #f59e0b;
+
+  /* ── Typography Colors ── */
+  --clr-text: #f3f4f6;
+  --clr-text-secondary: #9ca3af;
+  --clr-text-muted: #6b7280;
+  --clr-text-dim: #4b5563;
+
+  /* ── Geometry & Elevation ── */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 10px 28px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--clr-border);
+
+  /* ── Fonts ── */
+  --font-display: "Plus Jakarta Sans", "Inter", -apple-system, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+}
+
+/* ── Reset & Baseline ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background-color: var(--clr-bg);
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Typography Utilities ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+p {
+  color: var(--clr-text-secondary);
+}
+
+/* ── Layout & Viewports ── */
+.screen {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.container--sm { max-width: 460px; }
+.container--md { max-width: 680px; }
+.container--lg { max-width: 880px; }
+
+/* ── Cards & Surfaces ── */
+.card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+/* ── Buttons System ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: var(--radius-md);
+  padding: 11px 22px;
+  transition: all 0.16s ease;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--clr-primary);
+  outline-offset: 2px;
+}
+
+.btn--primary {
+  background: var(--clr-primary);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.35);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--clr-primary-hover);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn--secondary {
+  background: var(--clr-surface-2);
+  color: var(--clr-text);
+  border: 1px solid var(--clr-border);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--clr-surface-hover);
+  border-color: var(--clr-text-muted);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--clr-text-secondary);
+  border: 1px solid var(--clr-border);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  background: var(--clr-surface-2);
+  color: #fff;
+  border-color: var(--clr-text-muted);
+}
+
+.btn--accent {
+  background: var(--clr-accent);
+  color: #0f131c;
+  font-weight: 800;
+}
+
+.btn--accent:hover:not(:disabled) {
+  background: var(--clr-accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn--lg {
+  font-size: 1.05rem;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+}
+
+.btn--md {
+  font-size: 0.9rem;
+  padding: 10px 18px;
+}
+
+.btn--sm {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.btn--full { width: 100%; }
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* ── Badges & Status Chips ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge--primary {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  color: #818cf8;
+}
+
+.badge--accent {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
+.badge--success {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+/* ── Dividers ── */
+.divider {
+  height: 1px;
+  background: var(--clr-border);
+  margin: 18px 0;
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-surface-3);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-border);
+}
+
+/* ── Responsive adjustments ── */
+@media (max-width: 768px) {
+  .screen { padding: 16px 12px; }
+  .card { padding: 18px 16px; }
+}

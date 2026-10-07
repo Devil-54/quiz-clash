@@ -1,0 +1,118 @@
+/* ============================================================
+   QUIZ CLASH — Answer Options Styles
+   ============================================================ */
+
+.answer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.answer-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.answer-btn {
+  position: relative;
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  color: var(--clr-text);
+  border-radius: var(--radius-md);
+  padding: 16px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.12s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  text-align: center;
+  min-height: 64px;
+}
+
+.answer-btn__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 3vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.answer-btn__value--text {
+  font-size: clamp(0.9rem, 2.2vw, 1.05rem);
+  font-weight: 600;
+}
+
+.answer-btn__key-hint {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--clr-text-muted);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--clr-border);
+  padding: 1px 5px;
+  border-radius: var(--radius-xs);
+}
+
+.answer-btn:hover:not(:disabled) {
+  border-color: var(--clr-primary);
+  background: var(--clr-surface-hover);
+  transform: translateY(-1px);
+}
+
+.answer-btn:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.answer-btn:disabled {
+  cursor: default;
+}
+
+/* ── Selected State ── */
+.answer-btn--selected {
+  border-color: var(--clr-accent) !important;
+  background: rgba(245, 158, 11, 0.12) !important;
+  color: #fff !important;
+}
+
+/* ── Correct State ── */
+.answer-btn--correct {
+  border-color: var(--clr-success) !important;
+  background: rgba(16, 185, 129, 0.18) !important;
+  color: #34d399 !important;
+}
+
+/* ── Wrong State ── */
+.answer-btn--wrong {
+  border-color: var(--clr-danger) !important;
+  background: rgba(239, 68, 68, 0.18) !important;
+  color: #fca5a5 !important;
+}
+
+.answer-btn--dim {
+  opacity: 0.4;
+}
+
+.answer-section__locked-hint {
+  font-size: 0.8rem;
+  color: var(--clr-text-secondary);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-self: center;
+  gap: 6px;
+}
+
+@media (max-width: 560px) {
+  .answer-options {
+    grid-template-columns: 1fr;
+  }
+}
